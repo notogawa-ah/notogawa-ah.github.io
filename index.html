@@ -5,30 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>能登川どうぶつ病院 | 滋賀県東近江市の動物病院</title>
     <style>
+        /* 基本設定 */
         body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f0f4f8; }
         header { background-color: #005a9c; color: white; padding: 60px 20px; text-align: center; }
+        
+        /* メインの白い枠 */
         .container { max-width: 800px; margin: -30px auto 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h2 { border-left: 6px solid #005a9c; padding-left: 15px; color: #005a9c; margin-top: 30px; }
-        .info-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.95em; }
-        .info-table th, .info-table td { border: 1px solid #e0e0e0; padding: 12px; text-align: center; }
+        
+        /* ★【重要】今後追加する画像や動画が画面からはみ出さないための設定 */
+        img, video, canvas { max-width: 100%; height: auto; border-radius: 8px; }
+        
+        /* ★【重要】表のレスポンシブ設定（スマホでは横スクロール可能にする） */
+        .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px; }
+        .info-table { width: 100%; border-collapse: collapse; min-width: 500px; font-size: 0.95em; }
+        .info-table th, .info-table td { border: 1px solid #e0e0e0; padding: 12px; text-align: center; white-space: nowrap; }
         .info-table th { background-color: #f8fbff; color: #005a9c; }
-        .footer { text-align: center; padding: 30px; color: #888; font-size: 0.85em; }
+        
+        /* お問い合わせ枠 */
         .contact-box { background: #e7f3ff; border: 1px solid #b3d7ff; padding: 20px; border-radius: 8px; margin-top: 20px; text-align: center; }
         
-        /* マップをスマホ対応にするためのCSS */
-        .map-wrapper {
-            margin-top: 15px;
-            width: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #b3d7ff;
-            background-color: #fff;
-        }
-        .map-wrapper iframe {
-            width: 100%;
-            height: 350px; /* スマホでもPCでも見やすい高さ */
-            display: block;
-            border: 0;
+        /* マップ枠 */
+        .map-wrapper { margin-top: 15px; width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid #b3d7ff; background-color: #fff; }
+        .map-wrapper iframe { width: 100%; height: 350px; display: block; border: 0; }
+        
+        .footer { text-align: center; padding: 30px; color: #888; font-size: 0.85em; }
+        
+        /* ★スマホ専用のデザイン調整（画面幅が600px以下になったら自動で切り替わる） */
+        @media (max-width: 600px) {
+            header { padding: 40px 15px; } /* ヘッダーを少しスリムに */
+            h1 { font-size: 1.8em !important; }
+            .container { margin: -20px 15px 30px; padding: 20px; } /* 左右に少し隙間を作って読みやすく */
+            .info-table th, .info-table td { padding: 8px 5px; font-size: 0.9em; } /* 表の余白を詰める */
+            .contact-box { padding: 15px; }
         }
     </style>
 </head>
@@ -45,30 +54,6 @@
     <p>犬・猫の一般診療に加え、ウサギやハムスターなどのエキゾチックアニマルの診療にも力を入れています。どんな小さな不安でも、お気軽にご相談ください。</p>
     
     <h2>診療時間</h2>
-    <table class="info-table">
-        <thead>
-            <tr><th>診療時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>09:00-12:00</td><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>●</td><td>▲</td></tr>
-            <tr><td>16:00-19:00</td><td>●</td><td>●</td><td>●</td><td>／</td><td>●</td><td>▲</td><td>／</td></tr>
-        </tbody>
-    </table>
-    <p style="font-size: 0.85em; color: #666; margin-top: 10px;">※ 木曜・祝日は休診 / 日曜は午前のみ(▲) / 土曜午後は18:00まで</p>
-
-    <div class="contact-box">
-        <p style="margin:0; font-weight: bold; color: #005a9c;">お問い合わせ・アクセス</p>
-        <p style="margin: 10px 0 15px;">滋賀県東近江市（能登川エリア）<br>JR能登川駅から徒歩圏内（開院準備中）</p>
-        
-        <div class="map-wrapper">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13044.263297871947!2d136.15559220314032!3d35.179911897393964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60017e8c748b25bf%3A0xb5b3ebaeb355e274!2z6IO955m75bed6aeF!5e0!3m2!1sja!2sjp!4v1771984468658!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
-    &copy; 2026 能登川どうぶつ病院
-</div>
-
-</body>
-</html>
+    <div class="table-responsive">
+        <table class="info-table">
+            <thead>
