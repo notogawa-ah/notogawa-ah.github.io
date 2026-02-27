@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>料金のご案内 | 能登川どうぶつ病院</title>
+    <style>
+        /* トップページと同じ基本設定 */
+        body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f0f4f8; }
+        header { background-color: #005a9c; color: white; padding: 40px 20px; text-align: center; }
+        .container { max-width: 800px; margin: -20px auto 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { border-left: 6px solid #005a9c; padding-left: 15px; color: #005a9c; margin-top: 30px; }
+        .footer { text-align: center; padding: 30px; color: #888; font-size: 0.85em; }
+        
+        /* 料金ページ専用のデザイン */
+        .back-btn { display: inline-block; background: #6c757d; color: white; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-size: 0.9em; margin-bottom: 20px; }
+        
+        /* スマホ対応の表設定 */
+        .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px; }
+        .price-table { width: 100%; border-collapse: collapse; min-width: 400px; font-size: 0.95em; }
+        .price-table th, .price-table td { border: 1px solid #e0e0e0; padding: 12px; }
+        .price-table th { background-color: #f8fbff; color: #005a9c; text-align: left; width: 60%; }
+        .price-table td { text-align: right; font-weight: bold; color: #333; }
+        
+        .note { font-size: 0.85em; color: #666; margin-top: 10px; padding: 10px; background-color: #f9f9f9; border-radius: 5px; }
+        .payment-box { background: #e7f3ff; border: 1px solid #b3d7ff; padding: 20px; border-radius: 8px; margin-top: 30px; text-align: center; }
+
+        @media (max-width: 600px) {
+            .container { margin: -20px 15px 30px; padding: 20px; }
+            header { padding: 30px 15px; }
+            .price-table th, .price-table td { padding: 10px; font-size: 0.9em; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="margin:0; font-size: 1.8em;">能登川どうぶつ病院</h1>
+</header>
+
+<div class="container">
+    <a href="https://notogawa-ah.github.io/" class="back-btn">← トップページへ戻る</a>
+
+    <h2>料金のご案内</h2>
+    <p>当院では、飼い主様に安心して治療を受けていただけるよう、事前の費用説明（インフォームド・コンセント）を徹底しております。検査や治療にかかる費用については、診察時に詳しくお伝えいたします。</p>
+    <p>※以下の料金は目安（税込）です。動物の種類や体重、症状によって変動する場合があります。</p>
+
+    <h2>診察料</h2>
+    <div class="table-responsive">
+        <table class="price-table">
+            <tbody>
+                <tr><th>初診料</th><td>1,650円〜</td></tr>
+                <tr><th>再診料</th><td>880円〜</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>予防接種（ワクチン）</h2>
+    <div class="table-responsive">
+        <table class="price-table">
+            <tbody>
+                <tr><th>犬 混合ワクチン（5種〜）</th><td>6,600円〜</td></tr>
+                <tr><th>猫 混合ワクチン（3種〜）</th><td>4,400円〜</td></tr>
+                <tr><th>狂犬病予防注射</th><td>市町村の規定に準じます</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>避妊・去勢手術</h2>
+    <p style="font-size: 0.9em; color: #555;">※術前検査、麻酔代などが別途かかる場合がございます。詳しくはお問い合わせください。</p>
+    <div class="table-responsive">
+        <table class="price-table">
+            <tbody>
+                <tr><th>犬（オス）去勢手術</th><td>〇〇,〇〇〇円〜</td></tr>
+                <tr><th>犬（メス）避妊手術</th><td>〇〇,〇〇〇円〜</td></tr>
+                <tr><th>猫（オス）去勢手術</th><td>〇〇,〇〇〇円〜</td></tr>
+                <tr><th>猫（メス）避妊手術</th><td>〇〇,〇〇〇円〜</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>エキゾチックアニマルの診療費</h2>
+    <p class="note">ウサギやハムスター、小鳥などのエキゾチックアニマルにつきましては、動物種や必要な検査内容によって費用が異なります。ご予約時や診察時に目安をお伝えいたしますので、ご安心ください。</p>
+
+    <div class="payment-box">
+        <p style="margin:0; font-weight: bold; color: #005a9c;">各種クレジットカード・キャッシュレス決済対応（予定）</p>
+        <p style="margin: 10px 0 0; font-size: 0.9em; color: #555;">VISA / Mastercard / JCB / PayPay 等がご利用いただけるよう準備中です。</p>
+    </div>
+</div>
+
+<div class="footer">
+    &copy; 2026 能登川どうぶつ病院
+</div>
+
+</body>
+</html>
