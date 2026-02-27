@@ -9,35 +9,69 @@
         body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f0f4f8; }
         header { background-color: #005a9c; color: white; padding: 60px 20px; text-align: center; }
         
-        /* メインの白い枠 */
         .container { max-width: 800px; margin: -30px auto 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h2 { border-left: 6px solid #005a9c; padding-left: 15px; color: #005a9c; margin-top: 30px; }
         
-        /* ★【重要】今後追加する画像や動画が画面からはみ出さないための設定 */
         img, video, canvas { max-width: 100%; height: auto; border-radius: 8px; }
         
-        /* ★【重要】表のレスポンシブ設定（スマホでは横スクロール可能にする） */
         .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px; }
         .info-table { width: 100%; border-collapse: collapse; min-width: 500px; font-size: 0.95em; }
         .info-table th, .info-table td { border: 1px solid #e0e0e0; padding: 12px; text-align: center; white-space: nowrap; }
         .info-table th { background-color: #f8fbff; color: #005a9c; }
         
-        /* お問い合わせ枠 */
         .contact-box { background: #e7f3ff; border: 1px solid #b3d7ff; padding: 20px; border-radius: 8px; margin-top: 20px; text-align: center; }
         
-        /* マップ枠 */
         .map-wrapper { margin-top: 15px; width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid #b3d7ff; background-color: #fff; }
         .map-wrapper iframe { width: 100%; height: 350px; display: block; border: 0; }
         
         .footer { text-align: center; padding: 30px; color: #888; font-size: 0.85em; }
-        
-        /* ★スマホ専用のデザイン調整（画面幅が600px以下になったら自動で切り替わる） */
+
+        /* ▼▼▼ 追加：スマホ下部ナビゲーションの基本設定（PCでは隠す） ▼▼▼ */
+        .bottom-nav { display: none; }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
+        /* スマホ専用のデザイン調整（画面幅が600px以下になったら切り替わる） */
         @media (max-width: 600px) {
-            header { padding: 40px 15px; } /* ヘッダーを少しスリムに */
+            header { padding: 40px 15px; }
             h1 { font-size: 1.8em !important; }
-            .container { margin: -20px 15px 30px; padding: 20px; } /* 左右に少し隙間を作って読みやすく */
-            .info-table th, .info-table td { padding: 8px 5px; font-size: 0.9em; } /* 表の余白を詰める */
+            .container { margin: -20px 15px 30px; padding: 20px; }
+            .info-table th, .info-table td { padding: 8px 5px; font-size: 0.9em; }
             .contact-box { padding: 15px; }
+            
+            /* ▼▼▼ 追加：スマホの時はメニューの分だけ一番下の余白を増やす ▼▼▼ */
+            body { padding-bottom: 70px; } 
+            
+            /* ▼▼▼ 追加：スマホ下部ナビゲーションを表示する設定 ▼▼▼ */
+            .bottom-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                height: 65px;
+            }
+            .bottom-nav a {
+                flex: 1; /* ボタンを均等に配置 */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #555;
+                font-size: 0.75em;
+                padding: 5px 0;
+            }
+            .bottom-nav a:hover, .bottom-nav a:active {
+                color: #005a9c; /* タップした時に青くする */
+            }
+            .bottom-nav .nav-icon {
+                font-size: 1.6em;
+                margin-bottom: 2px;
+            }
+            /* ▲▲▲ ここまで ▲▲▲ */
         }
     </style>
 </head>
@@ -52,22 +86,25 @@
     <h2>ご挨拶</h2>
     <p>能登川どうぶつ病院のホームページをご覧いただきありがとうございます。私たちは、大切な家族である動物たちが一生を健やかに過ごせるよう、丁寧な診察と心に寄り添う説明を大切にしています。</p>
     <p>犬・猫の一般診療に加え、ウサギやハムスターなどのエキゾチックアニマルの診療にも力を入れています。どんな小さな不安でも、お気軽にご相談ください。</p>
+    
     <div style="text-align: center; margin: 30px 0;">
-        <a href="https://animal-hospital-shiga.blogspot.com/" target="_blank" style="display: inline-block; background-color: #ff9800; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s;">
-            🐾 院長ブログ・症例紹介はこちら
+        <a href="https://animal-hospital-shiga.blogspot.com/" target="_blank" style="display: inline-block; background-color: #ff9800; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; width: 80%; max-width: 300px;">
+            🐾 院長ブログ・症例紹介
         </a>
     </div>
-   <div style="text-align: center; margin: 25px 0;">
+
+    <div style="text-align: center; margin: 15px 0;">
         <a href="first-visit.html" style="display: inline-block; background-color: #e91e63; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 80%; max-width: 300px;">
             🔰 初めてご来院される方へ
         </a>
     </div>
-   <div style="text-align: center; margin: 15px 0 30px;">
+
+    <div style="text-align: center; margin: 15px 0 30px;">
         <a href="fee.html" style="display: inline-block; background-color: #28a745; color: white; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 80%; max-width: 300px;">
             💴 料金のご案内
         </a>
     </div>
-   
+    
     <h2>診療時間</h2>
     <div class="table-responsive">
         <table class="info-table">
@@ -93,8 +130,26 @@
 </div>
 
 <div class="footer">
-    &copy; 2026 能登川どうぶつ病院
+    © 2026 能登川どうぶつ病院
 </div>
 
+<nav class="bottom-nav">
+    <a href="index.html">
+        <span class="nav-icon">🏠</span>
+        <span>ホーム</span>
+    </a>
+    <a href="first-visit.html">
+        <span class="nav-icon">🔰</span>
+        <span>初診の方</span>
+    </a>
+    <a href="fee.html">
+        <span class="nav-icon">💴</span>
+        <span>料金</span>
+    </a>
+    <a href="https://animal-hospital-shiga.blogspot.com/" target="_blank">
+        <span class="nav-icon">🐾</span>
+        <span>ブログ</span>
+    </a>
+</nav>
 </body>
 </html>
