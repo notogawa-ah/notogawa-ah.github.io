@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>料金のご案内 | 能登川どうぶつ病院</title>
     <style>
-        /* トップページと同じ基本設定 */
+        /* 基本設定 */
         body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f0f4f8; }
         header { background-color: #005a9c; color: white; padding: 40px 20px; text-align: center; }
         .container { max-width: 800px; margin: -20px auto 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h2 { border-left: 6px solid #005a9c; padding-left: 15px; color: #005a9c; margin-top: 30px; }
         .footer { text-align: center; padding: 30px; color: #888; font-size: 0.85em; }
         
-        /* 料金ページ専用のデザイン */
         .back-btn { display: inline-block; background: #6c757d; color: white; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-size: 0.9em; margin-bottom: 20px; }
         
-        /* スマホ対応の表設定 */
         .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px; }
         .price-table { width: 100%; border-collapse: collapse; min-width: 400px; font-size: 0.95em; }
         .price-table th, .price-table td { border: 1px solid #e0e0e0; padding: 12px; }
@@ -25,10 +23,49 @@
         .note { font-size: 0.85em; color: #666; margin-top: 10px; padding: 10px; background-color: #f9f9f9; border-radius: 5px; }
         .payment-box { background: #e7f3ff; border: 1px solid #b3d7ff; padding: 20px; border-radius: 8px; margin-top: 30px; text-align: center; }
 
+        /* ▼▼▼ 追加：スマホ下部ナビゲーションの基本設定 ▼▼▼ */
+        .bottom-nav { display: none; }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
         @media (max-width: 600px) {
             .container { margin: -20px 15px 30px; padding: 20px; }
             header { padding: 30px 15px; }
             .price-table th, .price-table td { padding: 10px; font-size: 0.9em; }
+            
+            /* ▼▼▼ 追加：スマホの時はメニューの分だけ一番下の余白を増やす ▼▼▼ */
+            body { padding-bottom: 70px; } 
+            
+            /* ▼▼▼ 追加：スマホ下部ナビゲーションを表示する設定 ▼▼▼ */
+            .bottom-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                height: 65px;
+            }
+            .bottom-nav a {
+                flex: 1; 
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #555;
+                font-size: 0.75em;
+                padding: 5px 0;
+            }
+            .bottom-nav a:hover, .bottom-nav a:active {
+                color: #005a9c; 
+            }
+            .bottom-nav .nav-icon {
+                font-size: 1.6em;
+                margin-bottom: 2px;
+            }
+            /* ▲▲▲ ここまで ▲▲▲ */
         }
     </style>
 </head>
@@ -39,7 +76,7 @@
 </header>
 
 <div class="container">
-    <a href="https://notogawa-ah.github.io/" class="back-btn">← トップページへ戻る</a>
+    <a href="index.html" class="back-btn">← トップページへ戻る</a>
 
     <h2>料金のご案内</h2>
     <p>当院では、飼い主様に安心して治療を受けていただけるよう、事前の費用説明（インフォームド・コンセント）を徹底しております。検査や治療にかかる費用については、診察時に詳しくお伝えいたします。</p>
@@ -92,5 +129,23 @@
     &copy; 2026 能登川どうぶつ病院
 </div>
 
+<nav class="bottom-nav">
+    <a href="index.html">
+        <span class="nav-icon">🏠</span>
+        <span>ホーム</span>
+    </a>
+    <a href="first-visit.html">
+        <span class="nav-icon">🔰</span>
+        <span>初診の方</span>
+    </a>
+    <a href="fee.html">
+        <span class="nav-icon">💴</span>
+        <span>料金</span>
+    </a>
+    <a href="https://animal-hospital-shiga.blogspot.com/" target="_blank">
+        <span class="nav-icon">🐾</span>
+        <span>ブログ</span>
+    </a>
+</nav>
 </body>
 </html>
