@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>初診の方へ | 能登川どうぶつ病院</title>
     <style>
-        /* トップページと同じ基本設定 */
+        /* 基本設定 */
         body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f0f4f8; }
         header { background-color: #005a9c; color: white; padding: 40px 20px; text-align: center; }
         .container { max-width: 800px; margin: -20px auto 40px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -22,9 +22,48 @@
         .animal-type { color: #005a9c; border-bottom: 2px solid #e7f3ff; padding-bottom: 5px; margin-top: 25px; font-size: 1.2em; font-weight: bold; }
         .warning-box { background: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 8px; margin-top: 15px; font-size: 0.9em; }
 
+        /* ▼▼▼ 追加：スマホ下部ナビゲーションの基本設定 ▼▼▼ */
+        .bottom-nav { display: none; }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
         @media (max-width: 600px) {
             .container { margin: -20px 15px 30px; padding: 20px; }
             header { padding: 30px 15px; }
+
+            /* ▼▼▼ 追加：スマホの時はメニューの分だけ一番下の余白を増やす ▼▼▼ */
+            body { padding-bottom: 70px; } 
+            
+            /* ▼▼▼ 追加：スマホ下部ナビゲーションを表示する設定 ▼▼▼ */
+            .bottom-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                height: 65px;
+            }
+            .bottom-nav a {
+                flex: 1; 
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #555;
+                font-size: 0.75em;
+                padding: 5px 0;
+            }
+            .bottom-nav a:hover, .bottom-nav a:active {
+                color: #005a9c; 
+            }
+            .bottom-nav .nav-icon {
+                font-size: 1.6em;
+                margin-bottom: 2px;
+            }
+            /* ▲▲▲ ここまで ▲▲▲ */
         }
     </style>
 </head>
@@ -35,7 +74,7 @@
 </header>
 
 <div class="container">
-    <a href="https://notogawa-ah.github.io/" class="back-btn">← トップページへ戻る</a>
+    <a href="index.html" class="back-btn">← トップページへ戻る</a>
 
     <h2>初めてご来院される方へ</h2>
     <p>当院に初めてお越しいただく皆様へ、スムーズな診察と動物たちの安全のために、以下のご案内をご確認ください。</p>
@@ -68,7 +107,7 @@
     <p>ネコちゃんは非常にパニックになりやすいです。必ずキャリーバッグに入れ、できれば**洗濯ネット**に入れてからキャリーに入れると、診察がスムーズかつ安全に行えます。</p>
 
     <div class="animal-type">🐹🐰 エキゾチックアニマルの場合</div>
-    <p>ウサギやハムスター、小鳥などの小さな動物たちは、普段過ごしているケージ、またはしっかりとフタの閉まるキャリーに入れてお連れください。</p>
+    <p>ウサギやハムスターなどの小さな動物たちは、普段過ごしているケージ、またはしっかりとフタの閉まるキャリーに入れてお連れください。</p>
     <div class="warning-box">
         <strong>※温度管理にご注意ください</strong><br>
         エキゾチックアニマルは急激な温度変化に弱いため、夏場は保冷剤、冬場はホッカイロなどをケージの外側に当てるなど、移動中の温度管理をお願いいたします。
@@ -79,5 +118,23 @@
     &copy; 2026 能登川どうぶつ病院
 </div>
 
+<nav class="bottom-nav">
+    <a href="index.html">
+        <span class="nav-icon">🏠</span>
+        <span>ホーム</span>
+    </a>
+    <a href="first-visit.html">
+        <span class="nav-icon">🔰</span>
+        <span>初診の方</span>
+    </a>
+    <a href="fee.html">
+        <span class="nav-icon">💴</span>
+        <span>料金</span>
+    </a>
+    <a href="https://animal-hospital-shiga.blogspot.com/" target="_blank">
+        <span class="nav-icon">🐾</span>
+        <span>ブログ</span>
+    </a>
+</nav>
 </body>
 </html>
